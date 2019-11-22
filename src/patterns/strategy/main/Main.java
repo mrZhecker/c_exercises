@@ -5,6 +5,8 @@ import patterns.strategy.strategies.SMSInformator;
 import patterns.strategy.strategies.SocNetworksInformator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,11 +23,7 @@ public class Main {
         mySender.setMessageToSend("Hi, phone user!");
         mySender.send();
 
-        ArrayList<SocialNetworks> destinationNetworks = new ArrayList<SocialNetworks>();
-        destinationNetworks.add(SocialNetworks.Telegram);
-        destinationNetworks.add(SocialNetworks.Instagram);
-        destinationNetworks.add(SocialNetworks.VK);
-        destinationNetworks.add(SocialNetworks.OK);
+        List<SocialNetworks> destinationNetworks = new ArrayList<>(Arrays.asList(SocialNetworks.values()));
         mySender.setInformStrategy(new SocNetworksInformator(destinationNetworks));
         mySender.setMessageToSend("Hi, social network user!");
         mySender.send();
