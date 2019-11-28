@@ -13,13 +13,13 @@ public enum SocialNetworks {
             System.out.println(m);
         }
     },
-    VK{
+    VK {
         @Override
         public void send(Message m) {
             System.out.println(m);
         }
     },
-    OK{
+    OK {
         @Override
         public void send(Message m) {
             System.out.println(m);
